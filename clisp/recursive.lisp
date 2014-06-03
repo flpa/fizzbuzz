@@ -1,1 +1,5 @@
-(loop for i from 1 to 10 do (
+(defun fizzing (to)
+  (unless (eql 1 to)
+    (fizzing (1- to)))
+  (format t "~d~%" to))			     
+
