@@ -9,4 +9,11 @@
     (fizzing to (1+ num))))
 
 (defun print-num (num)
-  (format t "~d~%" num))
+	   (if (zerop (+ (mod num 3) (mod num 5)))
+	       (format t "FizzBuzz~%")
+	       (if (zerop (mod num 3))
+		   (format t "Fizz~%")
+		   (if (zerop (mod num 5))
+		       (format t "Buzz~%")
+		       (format t "~d~%" num)))))
+
