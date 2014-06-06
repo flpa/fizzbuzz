@@ -1,0 +1,11 @@
+#lang racket
+(define (fizzing to)
+  (unless (zero? to)
+    (fizzing (sub1 to))
+    (if (and (zero? (modulo to 3)) (zero? (modulo to 5)))
+        (printf "FizzBuzz\n")   
+        (if (zero? (modulo to 3))
+            (printf "Fizz\n")
+            (if (zero? (modulo to 5))
+                (printf "Buzz\n")
+                (printf "~a\n" to))))))
